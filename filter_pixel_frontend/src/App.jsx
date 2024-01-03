@@ -123,11 +123,7 @@ function App() {
               <div className="infoContainer">
                 <p>8/15 in-view</p>
                 <p>1 Selected/{selectedImage?.file_name}</p>
-                <img
-                  src="/up-arrow.png"
-                  alt="left"
-                  onClick={handleBottomBar}
-                />
+                <img src="/up-arrow.png" alt="left" onClick={handleBottomBar} />
               </div>
             </div>
           )}
@@ -262,7 +258,7 @@ function App() {
                       selectedImage?.exif_info["Image Model"]
                     : "Not Available"}
                 </p>
-              </div>
+            </div>
             </div>
           </div>
           <div className="downloadContainer">
