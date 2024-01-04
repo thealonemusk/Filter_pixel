@@ -12,7 +12,7 @@ function App() {
     const fetchImages = async () => {
       try {
         const response = await axios.get(
-          "https://filterpixel-server.onrender.com/images"
+          "http://127.0.0.1:8000/images"
         );
         setImages(response.data.images);
         setSelectedImage(response.data.images[0]);
@@ -50,7 +50,7 @@ function App() {
 
     axios
       .get(
-        `https://filterpixel-server.onrender.com/download/${selectedImage.file_name}`,
+        `http://127.0.0.1:8000/download/${selectedImage.file_name}`,
         {
           responseType: "blob",
         }
@@ -86,7 +86,7 @@ function App() {
         <div className="imagesContainer">
           <p>Showing {images.length - 1} photos</p>
           <img
-            src={`https://filterpixel-server.onrender.com/image-preview/${selectedImage?.file_name}`}
+            src={`http://127.0.0.1:3000/image-preview/${selectedImage?.file_name}`}
             alt={selectedImage?.file_name}
             className={displayBottomBar ? "mainImage" : "mainImage full"}
           />
@@ -111,7 +111,7 @@ function App() {
                         : "barImage"
                     }
                     key={index}
-                    src={`https://filterpixel-server.onrender.com/image-preview/${image.file_name}`}
+                    src={`http://127.0.0.1:3000/image-preview/${image.file_name}`}
                     alt={image.file_name}
                     onClick={() => handleImageSelect(image)}
                   />
