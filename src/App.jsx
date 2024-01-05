@@ -12,7 +12,7 @@ function App() {
     const fetchImages = async () => {
       try {
         const response = await axios.get(
-          "https://filterpixel-server.onrender.com/images"
+          "https://filterdeploy.azurewebsites.net/images"
         );
         setImages(response.data.images);
         setSelectedImage(response.data.images[0]);
@@ -50,7 +50,7 @@ function App() {
 
     axios
       .get(
-        `https://filterpixel-server.onrender.com/download/${selectedImage.file_name}`,
+        `https://filterdeploy.azurewebsites.net/download/${selectedImage.file_name}`,
         {
           responseType: "blob",
         }
@@ -86,7 +86,7 @@ function App() {
         <div className="imagesContainer">
           <p>Showing {images.length - 1} photos</p>
           <img
-            src={`https://filterpixel-server.onrender.com/image-preview/${selectedImage?.file_name}`}
+            src={`https://filterdeploy.azurewebsites.net/image-preview/${selectedImage?.file_name}`}
             alt={selectedImage?.file_name}
             className={displayBottomBar ? "mainImage" : "mainImage full"}
           />
@@ -111,7 +111,7 @@ function App() {
                         : "barImage"
                     }
                     key={index}
-                    src={`https://filterpixel-server.onrender.com/image-preview/${image.file_name}`}
+                    src={`https://filterdeploy.azurewebsites.net/image-preview/${image.file_name}`}
                     alt={image.file_name}
                     onClick={() => handleImageSelect(image)}
                   />
@@ -144,7 +144,7 @@ function App() {
                     ? selectedImage?.exif_info["MakerNote LensType"]
                     : "Not Available"}
                 </p>
-              </div>
+              </div> 
               <div className="detail">
                 <p className="detailTitle">Lens AF</p>
                 <p className="detailValue">
